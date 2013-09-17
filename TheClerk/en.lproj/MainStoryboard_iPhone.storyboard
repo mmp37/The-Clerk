@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="W2V-ai-Kfh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lLV-nz-ozP">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="W2V-ai-Kfh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhf-Ya-AzW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="wHO-fd-b3g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAe-VF-ReV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="724"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxm-VM-nGT">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Phone Book">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectAndMove:" destination="2" eventType="touchUpInside" id="6QZ-vD-pHe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-fI-zT8">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Survival Guide">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectAndMove:" destination="2" eventType="touchUpInside" id="U7V-Ks-5N7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rxm-VM-nGT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AaE-hd-OBe"/>
+                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Es3-YR-Z0h"/>
+                            <constraint firstItem="qm3-fI-zT8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="218" id="M1B-Qq-A21"/>
+                            <constraint firstAttribute="trailing" secondItem="qm3-fI-zT8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cYk-a4-CEz"/>
+                            <constraint firstItem="qm3-fI-zT8" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hNZ-UY-0W1"/>
+                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="top" secondItem="3" secondAttribute="top" constant="98" id="wTe-Py-2Rc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GjP-Eg-peS"/>
+                    <connections>
+                        <outlet property="PhoneButton" destination="Rxm-VM-nGT" id="IYZ-g1-MMF"/>
+                        <outlet property="SurvivalButton" destination="qm3-fI-zT8" id="wfv-XM-jYI"/>
+                        <segue destination="Pby-47-M48" kind="push" identifier="PhoneBookSeg" id="CKK-qf-bpd"/>
+                        <segue destination="N4r-hp-9Nu" kind="push" identifier="SurvivalGuideSeg" id="llr-cf-KeC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Survival Table Controller-->
+        <scene sceneID="4RJ-Ja-8Cf">
+            <objects>
+                <viewController id="N4r-hp-9Nu" customClass="SurvivalTableController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TgT-Ct-tYQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nbM-FZ-2LP">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="N4r-hp-9Nu" id="2zg-bp-FxR"/>
+                                    <outlet property="delegate" destination="N4r-hp-9Nu" id="ozD-ux-wDn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nbM-FZ-2LP" firstAttribute="top" secondItem="TgT-Ct-tYQ" secondAttribute="top" type="default" id="0qK-Yh-kUt"/>
+                            <constraint firstItem="nbM-FZ-2LP" firstAttribute="trailing" secondItem="TgT-Ct-tYQ" secondAttribute="trailing" type="default" id="31A-7n-Orr"/>
+                            <constraint firstItem="nbM-FZ-2LP" firstAttribute="bottom" secondItem="TgT-Ct-tYQ" secondAttribute="bottom" type="default" id="MZT-j0-LQS"/>
+                            <constraint firstItem="nbM-FZ-2LP" firstAttribute="leading" secondItem="TgT-Ct-tYQ" secondAttribute="leading" type="default" id="nLF-bC-tFA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iTT-sw-YZ8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9i-JJ-cHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="1602"/>
+        </scene>
+        <!--Phone View Controller-->
+        <scene sceneID="JAg-gH-b9X">
+            <objects>
+                <viewController id="Pby-47-M48" customClass="PhoneViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8aT-wE-Cuc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jg2-Bj-lFL">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pby-47-M48" id="OVj-R3-cOC"/>
+                                    <outlet property="delegate" destination="Pby-47-M48" id="NoE-HE-IN5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jg2-Bj-lFL" firstAttribute="trailing" secondItem="8aT-wE-Cuc" secondAttribute="trailing" type="default" id="3B8-r5-lEj"/>
+                            <constraint firstItem="Jg2-Bj-lFL" firstAttribute="bottom" secondItem="8aT-wE-Cuc" secondAttribute="bottom" type="default" id="GWK-bF-8vJ"/>
+                            <constraint firstItem="Jg2-Bj-lFL" firstAttribute="leading" secondItem="8aT-wE-Cuc" secondAttribute="leading" type="default" id="edp-CT-6zq"/>
+                            <constraint firstItem="Jg2-Bj-lFL" firstAttribute="top" secondItem="8aT-wE-Cuc" secondAttribute="top" type="default" id="jUj-s6-aaw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eyc-zS-N0x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9T-d7-tVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="-265"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhoneViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneViewController.h"/>
+        </class>
+        <class className="SurvivalTableController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SurvivalTableController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectAndMove:"/>
+                <relationship kind="outlet" name="PhoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SurvivalButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
