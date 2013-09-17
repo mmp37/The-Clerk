@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ABB8A34817E8A7F600C688B7 /* SurvivalTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */; };
+		ABB8A35117E9093C00C688B7 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A35017E9093C00C688B7 /* FavoritesViewController.m */; };
+		ABB8A35417E9094A00C688B7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A35317E9094A00C688B7 /* SettingsViewController.m */; };
 		ABE4692B17E7770B005E0987 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE4692A17E7770B005E0987 /* UIKit.framework */; };
 		ABE4692D17E7770B005E0987 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE4692C17E7770B005E0987 /* Foundation.framework */; };
 		ABE4692F17E7770B005E0987 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE4692E17E7770B005E0987 /* CoreGraphics.framework */; };
@@ -26,6 +28,10 @@
 /* Begin PBXFileReference section */
 		ABB8A34617E8A7F600C688B7 /* SurvivalTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalTableController.h; sourceTree = "<group>"; };
 		ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalTableController.m; sourceTree = "<group>"; };
+		ABB8A34F17E9093C00C688B7 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		ABB8A35017E9093C00C688B7 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		ABB8A35217E9094A00C688B7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		ABB8A35317E9094A00C688B7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		ABE4692717E7770B005E0987 /* TheClerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheClerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE4692A17E7770B005E0987 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ABE4692C17E7770B005E0987 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +108,10 @@
 				ABE4694917E7770B005E0987 /* ViewController.m */,
 				ABB8A34617E8A7F600C688B7 /* SurvivalTableController.h */,
 				ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */,
+				ABB8A34F17E9093C00C688B7 /* FavoritesViewController.h */,
+				ABB8A35017E9093C00C688B7 /* FavoritesViewController.m */,
+				ABB8A35217E9094A00C688B7 /* SettingsViewController.h */,
+				ABB8A35317E9094A00C688B7 /* SettingsViewController.m */,
 			);
 			path = TheClerk;
 			sourceTree = "<group>";
@@ -192,6 +202,8 @@
 				ABE4694A17E7770B005E0987 /* ViewController.m in Sources */,
 				ABE4695217E77B16005E0987 /* PhoneViewController.m in Sources */,
 				ABB8A34817E8A7F600C688B7 /* SurvivalTableController.m in Sources */,
+				ABB8A35117E9093C00C688B7 /* FavoritesViewController.m in Sources */,
+				ABB8A35417E9094A00C688B7 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

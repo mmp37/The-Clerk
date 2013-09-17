@@ -34,6 +34,12 @@
     else if([((UIButton*)sender).titleLabel.text isEqualToString:@"Survival Guide"]) {
         [self performSegueWithIdentifier:@"SurvivalGuideSeg" sender:self];
     }
+    else if([((UIButton*)sender).titleLabel.text isEqualToString:@"Favorites"]) {
+        [self performSegueWithIdentifier:@"FavsSeg" sender:self];
+    }
+    else if([((UIButton*)sender).titleLabel.text isEqualToString:@"Settings"]) {
+        [self performSegueWithIdentifier:@"SettingsSeg" sender:self];
+    }
     //}
 }
 
