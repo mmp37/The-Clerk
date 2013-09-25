@@ -28,8 +28,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxm-VM-nGT">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KHL-xd-tc7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Phone Book">
+                                <color key="tintColor" red="0.0" green="0.31764706969261169" blue="0.60784316062927246" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Phone Book" image="phoneDirectory.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,8 +45,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-fI-zT8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5K6-S4-cJP"/>
+                                    <constraint firstAttribute="height" constant="106" id="Bs8-zm-qgT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Survival Guide">
+                                <state key="normal" title="Survival Guide" image="survivalGuide.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -53,11 +61,12 @@
                                     <action selector="selectAndMove:" destination="2" eventType="touchUpInside" id="U7V-Ks-5N7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSY-Xi-3QA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSY-Xi-3QA">
+                                <color key="backgroundColor" red="0.0" green="0.31764706970000001" blue="0.60784316059999999" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Favorites">
+                                <state key="normal" title="Favorites" image="favorites.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0078431377187371254" green="0.23137256503105164" blue="0.55686277151107788" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,8 +76,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbs-Dg-K2t">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="ib8-7O-VUe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Settings">
+                                <state key="normal" title="Settings" image="settings.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,21 +91,37 @@
                                     <action selector="selectAndMove:" destination="2" eventType="touchUpInside" id="gGm-Fx-FjA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-fj-9yM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="DzT-De-8C7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="self-care.jpg">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.31764706969261169" blue="0.60784316062927246" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="top" secondItem="3" secondAttribute="top" constant="158" id="1mC-ge-LPn"/>
-                            <constraint firstAttribute="trailing" secondItem="Rxm-VM-nGT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AaE-hd-OBe"/>
-                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CG0-Hm-YlB"/>
-                            <constraint firstAttribute="trailing" secondItem="Hbs-Dg-K2t" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CG1-lW-zQ8"/>
-                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Es3-YR-Z0h"/>
-                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Gtv-Nd-hms"/>
-                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="top" secondItem="3" secondAttribute="top" constant="237" id="IHO-lP-pxo"/>
-                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="PJP-zA-0cJ"/>
-                            <constraint firstAttribute="trailing" secondItem="qm3-fI-zT8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cYk-a4-CEz"/>
-                            <constraint firstItem="qm3-fI-zT8" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hNZ-UY-0W1"/>
-                            <constraint firstAttribute="trailing" secondItem="RSY-Xi-3QA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lP9-pU-bi4"/>
-                            <constraint firstItem="qm3-fI-zT8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="96" id="mHv-GZ-Tiv"/>
+                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="leading" secondItem="Hbs-Dg-K2t" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0Xd-OQ-mkF"/>
+                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0xS-iz-bVp"/>
+                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="top" secondItem="Rxm-VM-nGT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2ON-Zd-PrG"/>
+                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="top" secondItem="qm3-fI-zT8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4RR-Or-2lF"/>
+                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="leading" secondItem="qm3-fI-zT8" secondAttribute="leading" type="default" id="4cj-en-SVw"/>
+                            <constraint firstItem="NIm-fj-9yM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="62N-Fr-d9G"/>
+                            <constraint firstItem="qm3-fI-zT8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="UFe-WD-uhg"/>
+                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="bottom" secondItem="Hbs-Dg-K2t" secondAttribute="bottom" type="default" id="Wa9-y2-3Hu"/>
+                            <constraint firstItem="NIm-fj-9yM" firstAttribute="trailing" secondItem="Hbs-Dg-K2t" secondAttribute="trailing" type="default" id="Wla-k0-qws"/>
+                            <constraint firstItem="NIm-fj-9yM" firstAttribute="top" secondItem="Hbs-Dg-K2t" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Yru-KT-7J8"/>
+                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ban-Iv-jUh"/>
+                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="icK-sf-2z7"/>
+                            <constraint firstItem="qm3-fI-zT8" firstAttribute="leading" secondItem="Rxm-VM-nGT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="owf-J2-bBo"/>
+                            <constraint firstItem="qm3-fI-zT8" firstAttribute="centerY" secondItem="Rxm-VM-nGT" secondAttribute="centerY" type="default" id="rqR-kf-ZSm"/>
+                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="trailing" secondItem="qm3-fI-zT8" secondAttribute="trailing" type="default" id="xls-Qz-P6l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GjP-Eg-peS"/>
@@ -215,6 +243,13 @@
             <point key="canvasLocation" x="775" y="-265"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorites.jpg" width="98" height="109"/>
+        <image name="phoneDirectory.jpg" width="98" height="109"/>
+        <image name="self-care.jpg" width="98" height="109"/>
+        <image name="settings.jpg" width="98" height="109"/>
+        <image name="survivalGuide.jpg" width="98" height="109"/>
+    </resources>
     <classes>
         <class className="FavoritesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesViewController.h"/>

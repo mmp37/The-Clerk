@@ -23,6 +23,11 @@
 		ABE4694717E7770B005E0987 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE4694517E7770B005E0987 /* MainStoryboard_iPad.storyboard */; };
 		ABE4694A17E7770B005E0987 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE4694917E7770B005E0987 /* ViewController.m */; };
 		ABE4695217E77B16005E0987 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE4695117E77B16005E0987 /* PhoneViewController.m */; };
+		ABF738EB17F0BEA00030872D /* favorites.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABF738E617F0BEA00030872D /* favorites.jpg */; };
+		ABF738EC17F0BEA00030872D /* phoneDirectory.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABF738E717F0BEA00030872D /* phoneDirectory.jpg */; };
+		ABF738ED17F0BEA00030872D /* self-care.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABF738E817F0BEA00030872D /* self-care.jpg */; };
+		ABF738EE17F0BEA00030872D /* settings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABF738E917F0BEA00030872D /* settings.jpg */; };
+		ABF738EF17F0BEA00030872D /* survivalGuide.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABF738EA17F0BEA00030872D /* survivalGuide.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		ABE4694917E7770B005E0987 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ABE4695017E77B16005E0987 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
 		ABE4695117E77B16005E0987 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		ABF738E617F0BEA00030872D /* favorites.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = favorites.jpg; sourceTree = "<group>"; };
+		ABF738E717F0BEA00030872D /* phoneDirectory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = phoneDirectory.jpg; sourceTree = "<group>"; };
+		ABF738E817F0BEA00030872D /* self-care.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "self-care.jpg"; sourceTree = "<group>"; };
+		ABF738E917F0BEA00030872D /* settings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = settings.jpg; sourceTree = "<group>"; };
+		ABF738EA17F0BEA00030872D /* survivalGuide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = survivalGuide.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 		ABE4691E17E7770B005E0987 = {
 			isa = PBXGroup;
 			children = (
+				ABF738E517F0BEA00030872D /* images */,
 				ABE4693017E7770B005E0987 /* TheClerk */,
 				ABE4692917E7770B005E0987 /* Frameworks */,
 				ABE4692817E7770B005E0987 /* Products */,
@@ -130,6 +141,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ABF738E517F0BEA00030872D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ABF738E617F0BEA00030872D /* favorites.jpg */,
+				ABF738E717F0BEA00030872D /* phoneDirectory.jpg */,
+				ABF738E817F0BEA00030872D /* self-care.jpg */,
+				ABF738E917F0BEA00030872D /* settings.jpg */,
+				ABF738EA17F0BEA00030872D /* survivalGuide.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +210,11 @@
 				ABE4694117E7770B005E0987 /* Default-568h@2x.png in Resources */,
 				ABE4694417E7770B005E0987 /* MainStoryboard_iPhone.storyboard in Resources */,
 				ABE4694717E7770B005E0987 /* MainStoryboard_iPad.storyboard in Resources */,
+				ABF738EB17F0BEA00030872D /* favorites.jpg in Resources */,
+				ABF738EC17F0BEA00030872D /* phoneDirectory.jpg in Resources */,
+				ABF738ED17F0BEA00030872D /* self-care.jpg in Resources */,
+				ABF738EE17F0BEA00030872D /* settings.jpg in Resources */,
+				ABF738EF17F0BEA00030872D /* survivalGuide.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
