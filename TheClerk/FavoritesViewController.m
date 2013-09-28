@@ -26,8 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _conditionFavs = [[NSArray alloc] initWithObjects:@"Measles",  nil];
-    _numberFavs = [[NSArray alloc] initWithObjects:@"123456690", nil];
+    _localDB = [FavoritesManager getSharedInstance];
+    _conditionFavs = [self.localDB retrieveAll:@"favconds"];
+    _numberFavs = [self.localDB retrieveAll:@"favphnums"];
 	// Do any additional setup after loading the view.
 }
 
@@ -69,14 +70,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
     if(indexPath.section == 0) {
         cell.textLabel.text = [self.conditionFavs objectAtIndex:indexPath.row];
     }
     else if(indexPath.section == 1) {
-        cell.textLabel.text = [self.numberFavs objectAtIndex:indexPath.row];
+        cell.textLabel.text = ((PhoneNumber*)[self.numberFavs objectAtIndex:indexPath.row]).name;
+        cell.detailTextLabel.text = ((PhoneNumber*)[self.numberFavs objectAtIndex:indexPath.row]).number;
+        NSLog(@"%@",((PhoneNumber*)[self.numberFavs objectAtIndex:indexPath.row]).number);
     }
     //cell.detailTextLabel.text = [self.phoneOwnerArray objectAtIndex:indexPath.row];
     return cell;

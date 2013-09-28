@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoritesManager.h"
 
 @interface FavoritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (retain, nonatomic) NSArray * conditionFavs;
 @property (retain, nonatomic) NSArray * numberFavs;
+@property (retain, nonatomic) FavoritesManager * localDB;
 
 @end

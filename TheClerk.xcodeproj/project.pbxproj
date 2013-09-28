@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB008CCA17F71B120090D76E /* FavoritesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB008CC917F71B120090D76E /* FavoritesManager.m */; };
+		AB008CCC17F71B440090D76E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */; };
+		AB008CCF17F728BF0090D76E /* PhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = AB008CCE17F728BF0090D76E /* PhoneNumber.m */; };
 		ABB8A34817E8A7F600C688B7 /* SurvivalTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */; };
 		ABB8A35117E9093C00C688B7 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A35017E9093C00C688B7 /* FavoritesViewController.m */; };
 		ABB8A35417E9094A00C688B7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A35317E9094A00C688B7 /* SettingsViewController.m */; };
@@ -31,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB008CC817F71B120090D76E /* FavoritesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesManager.h; sourceTree = "<group>"; };
+		AB008CC917F71B120090D76E /* FavoritesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesManager.m; sourceTree = "<group>"; };
+		AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		AB008CCD17F728BF0090D76E /* PhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumber.h; sourceTree = "<group>"; };
+		AB008CCE17F728BF0090D76E /* PhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumber.m; sourceTree = "<group>"; };
 		ABB8A34617E8A7F600C688B7 /* SurvivalTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalTableController.h; sourceTree = "<group>"; };
 		ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalTableController.m; sourceTree = "<group>"; };
 		ABB8A34F17E9093C00C688B7 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB008CCC17F71B440090D76E /* libsqlite3.0.dylib in Frameworks */,
 				ABE4692B17E7770B005E0987 /* UIKit.framework in Frameworks */,
 				ABE4692D17E7770B005E0987 /* Foundation.framework in Frameworks */,
 				ABE4692F17E7770B005E0987 /* CoreGraphics.framework in Frameworks */,
@@ -80,6 +89,11 @@
 		ABE4691E17E7770B005E0987 = {
 			isa = PBXGroup;
 			children = (
+				AB008CCD17F728BF0090D76E /* PhoneNumber.h */,
+				AB008CCE17F728BF0090D76E /* PhoneNumber.m */,
+				AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */,
+				AB008CC817F71B120090D76E /* FavoritesManager.h */,
+				AB008CC917F71B120090D76E /* FavoritesManager.m */,
 				ABF738E517F0BEA00030872D /* images */,
 				ABE4693017E7770B005E0987 /* TheClerk */,
 				ABE4692917E7770B005E0987 /* Frameworks */,
@@ -232,6 +246,8 @@
 				ABB8A34817E8A7F600C688B7 /* SurvivalTableController.m in Sources */,
 				ABB8A35117E9093C00C688B7 /* FavoritesViewController.m in Sources */,
 				ABB8A35417E9094A00C688B7 /* SettingsViewController.m in Sources */,
+				AB008CCA17F71B120090D76E /* FavoritesManager.m in Sources */,
+				AB008CCF17F728BF0090D76E /* PhoneNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

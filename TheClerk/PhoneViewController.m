@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _localDB = [FavoritesManager getSharedInstance];
     _phoneNumbersArray = [[NSArray alloc] initWithObjects:@"(123) 456-789", @"(408) 245-2414", nil];
     _phoneOwnerArray = [[NSArray alloc] initWithObjects:@"Bob", @"Phil", nil];
 	// Do any additional setup after loading the view.
@@ -59,11 +60,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [self.phoneNumbersArray objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [self.phoneOwnerArray objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.phoneNumbersArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.phoneOwnerArray objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -80,6 +81,7 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.localDB savePhNum:[self.phoneOwnerArray objectAtIndex:indexPath.row] num:[self.phoneNumbersArray objectAtIndex:indexPath.row]];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorited"
                                                         message:@"This item has been added to your favorites!"
                                                        delegate:nil

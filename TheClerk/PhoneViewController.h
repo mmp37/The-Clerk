@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoritesManager.h"
 
 @interface PhoneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (retain, nonatomic) NSArray* phoneNumbersArray;
 @property (retain, nonatomic) NSArray* phoneOwnerArray;
+@property (retain, nonatomic) FavoritesManager* localDB;
 
 @end

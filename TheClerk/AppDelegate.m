@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FavoritesManager.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [FavoritesManager getSharedInstance];
     return YES;
 }
 							
