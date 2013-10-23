@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _localDB = [FavoritesManager getSharedInstance];
     _conditionNames = [[NSArray alloc] initWithObjects:@"Measles", @"Flu", nil];
 	// Do any additional setup after loading the view.
 }
@@ -78,6 +79,8 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.localDB saveCondition:[self.conditionNames objectAtIndex:indexPath.row] data:@"Null Data"];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorited"
                                                         message:@"This item has been added to your favorites!"

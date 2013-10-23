@@ -74,7 +74,7 @@
     }
     
     if(indexPath.section == 0) {
-        cell.textLabel.text = [self.conditionFavs objectAtIndex:indexPath.row];
+        cell.textLabel.text = ((PhoneNumber*)[self.conditionFavs objectAtIndex:indexPath.row]).name;
     }
     else if(indexPath.section == 1) {
         cell.textLabel.text = ((PhoneNumber*)[self.numberFavs objectAtIndex:indexPath.row]).name;
@@ -87,7 +87,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:4083932900"]];
+    if(indexPath.section == 1){
+        NSString* phnum = [[NSString alloc] initWithString:((PhoneNumber*)[self.numberFavs objectAtIndex:indexPath.row]).number];
+        phnum = [phnum stringByReplacingOccurrencesOfString:@"(" withString:@""];
+        phnum = [phnum stringByReplacingOccurrencesOfString:@")" withString:@""];
+        phnum = [phnum stringByReplacingOccurrencesOfString:@" " withString:@""];
+        phnum = [phnum stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        NSLog(@"%@",phnum);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phnum]];
+    }
 }
 
 @end

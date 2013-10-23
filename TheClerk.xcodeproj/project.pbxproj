@@ -10,6 +10,14 @@
 		AB008CCA17F71B120090D76E /* FavoritesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB008CC917F71B120090D76E /* FavoritesManager.m */; };
 		AB008CCC17F71B440090D76E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */; };
 		AB008CCF17F728BF0090D76E /* PhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = AB008CCE17F728BF0090D76E /* PhoneNumber.m */; };
+		AB98B615181060AE00323DDB /* ClerkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB98B614181060AE00323DDB /* ClerkCell.m */; };
+		AB98B6171810726000323DDB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB98B6161810726000323DDB /* MessageUI.framework */; };
+		AB98B61F1810761F00323DDB /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB98B6181810761E00323DDB /* check@2x.png */; };
+		AB98B6201810761F00323DDB /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB98B6191810761E00323DDB /* clock@2x.png */; };
+		AB98B6211810761F00323DDB /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB98B61A1810761E00323DDB /* cross@2x.png */; };
+		AB98B6221810761F00323DDB /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB98B61B1810761F00323DDB /* list@2x.png */; };
+		AB98B6231810761F00323DDB /* MI.png in Resources */ = {isa = PBXBuildFile; fileRef = AB98B61C1810761F00323DDB /* MI.png */; };
+		AB98B6241810761F00323DDB /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB98B61E1810761F00323DDB /* SWTableViewCell.m */; };
 		ABB8A34817E8A7F600C688B7 /* SurvivalTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */; };
 		ABB8A35117E9093C00C688B7 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A35017E9093C00C688B7 /* FavoritesViewController.m */; };
 		ABB8A35417E9094A00C688B7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB8A35317E9094A00C688B7 /* SettingsViewController.m */; };
@@ -39,6 +47,16 @@
 		AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		AB008CCD17F728BF0090D76E /* PhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumber.h; sourceTree = "<group>"; };
 		AB008CCE17F728BF0090D76E /* PhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumber.m; sourceTree = "<group>"; };
+		AB98B613181060AE00323DDB /* ClerkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClerkCell.h; sourceTree = "<group>"; };
+		AB98B614181060AE00323DDB /* ClerkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClerkCell.m; sourceTree = "<group>"; };
+		AB98B6161810726000323DDB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AB98B6181810761E00323DDB /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		AB98B6191810761E00323DDB /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		AB98B61A1810761E00323DDB /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		AB98B61B1810761F00323DDB /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		AB98B61C1810761F00323DDB /* MI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MI.png; sourceTree = "<group>"; };
+		AB98B61D1810761F00323DDB /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		AB98B61E1810761F00323DDB /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
 		ABB8A34617E8A7F600C688B7 /* SurvivalTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalTableController.h; sourceTree = "<group>"; };
 		ABB8A34717E8A7F600C688B7 /* SurvivalTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalTableController.m; sourceTree = "<group>"; };
 		ABB8A34F17E9093C00C688B7 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
@@ -76,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB98B6171810726000323DDB /* MessageUI.framework in Frameworks */,
 				AB008CCC17F71B440090D76E /* libsqlite3.0.dylib in Frameworks */,
 				ABE4692B17E7770B005E0987 /* UIKit.framework in Frameworks */,
 				ABE4692D17E7770B005E0987 /* Foundation.framework in Frameworks */,
@@ -89,15 +108,16 @@
 		ABE4691E17E7770B005E0987 = {
 			isa = PBXGroup;
 			children = (
-				AB008CCD17F728BF0090D76E /* PhoneNumber.h */,
-				AB008CCE17F728BF0090D76E /* PhoneNumber.m */,
-				AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */,
 				AB008CC817F71B120090D76E /* FavoritesManager.h */,
 				AB008CC917F71B120090D76E /* FavoritesManager.m */,
-				ABF738E517F0BEA00030872D /* images */,
-				ABE4693017E7770B005E0987 /* TheClerk */,
 				ABE4692917E7770B005E0987 /* Frameworks */,
+				ABF738E517F0BEA00030872D /* images */,
+				AB008CCB17F71B440090D76E /* libsqlite3.0.dylib */,
+				AB98B6161810726000323DDB /* MessageUI.framework */,
+				AB008CCD17F728BF0090D76E /* PhoneNumber.h */,
+				AB008CCE17F728BF0090D76E /* PhoneNumber.m */,
 				ABE4692817E7770B005E0987 /* Products */,
+				ABE4693017E7770B005E0987 /* TheClerk */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,12 +142,21 @@
 		ABE4693017E7770B005E0987 /* TheClerk */ = {
 			isa = PBXGroup;
 			children = (
+				AB98B6181810761E00323DDB /* check@2x.png */,
+				AB98B6191810761E00323DDB /* clock@2x.png */,
+				AB98B61A1810761E00323DDB /* cross@2x.png */,
+				AB98B61B1810761F00323DDB /* list@2x.png */,
+				AB98B61C1810761F00323DDB /* MI.png */,
+				AB98B61D1810761F00323DDB /* SWTableViewCell.h */,
+				AB98B61E1810761F00323DDB /* SWTableViewCell.m */,
 				ABE4693917E7770B005E0987 /* AppDelegate.h */,
 				ABE4693A17E7770B005E0987 /* AppDelegate.m */,
 				ABE4694517E7770B005E0987 /* MainStoryboard_iPad.storyboard */,
 				ABE4694217E7770B005E0987 /* MainStoryboard_iPhone.storyboard */,
 				ABE4695017E77B16005E0987 /* PhoneViewController.h */,
 				ABE4695117E77B16005E0987 /* PhoneViewController.m */,
+				AB98B613181060AE00323DDB /* ClerkCell.h */,
+				AB98B614181060AE00323DDB /* ClerkCell.m */,
 				ABE4693117E7770B005E0987 /* Supporting Files */,
 				ABE4694817E7770B005E0987 /* ViewController.h */,
 				ABE4694917E7770B005E0987 /* ViewController.m */,
@@ -229,6 +258,11 @@
 				ABF738ED17F0BEA00030872D /* self-care.jpg in Resources */,
 				ABF738EE17F0BEA00030872D /* settings.jpg in Resources */,
 				ABF738EF17F0BEA00030872D /* survivalGuide.jpg in Resources */,
+				AB98B61F1810761F00323DDB /* check@2x.png in Resources */,
+				AB98B6201810761F00323DDB /* clock@2x.png in Resources */,
+				AB98B6211810761F00323DDB /* cross@2x.png in Resources */,
+				AB98B6221810761F00323DDB /* list@2x.png in Resources */,
+				AB98B6231810761F00323DDB /* MI.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +282,8 @@
 				ABB8A35417E9094A00C688B7 /* SettingsViewController.m in Sources */,
 				AB008CCA17F71B120090D76E /* FavoritesManager.m in Sources */,
 				AB008CCF17F728BF0090D76E /* PhoneNumber.m in Sources */,
+				AB98B615181060AE00323DDB /* ClerkCell.m in Sources */,
+				AB98B6241810761F00323DDB /* SWTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxm-VM-nGT">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="KHL-xd-tc7"/>
+                                    <constraint firstAttribute="height" constant="106" id="vUp-F9-NXs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.31764706969261169" blue="0.60784316062927246" alpha="1" colorSpace="deviceRGB"/>
@@ -47,7 +48,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-fI-zT8">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="5K6-S4-cJP"/>
-                                    <constraint firstAttribute="height" constant="106" id="Bs8-zm-qgT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Survival Guide" image="survivalGuide.jpg">
@@ -63,6 +63,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSY-Xi-3QA">
                                 <color key="backgroundColor" red="0.0" green="0.31764706970000001" blue="0.60784316059999999" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="rsI-HK-kht"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Favorites" image="favorites.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -109,19 +112,20 @@
                         <constraints>
                             <constraint firstItem="RSY-Xi-3QA" firstAttribute="leading" secondItem="Hbs-Dg-K2t" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0Xd-OQ-mkF"/>
                             <constraint firstItem="Hbs-Dg-K2t" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0xS-iz-bVp"/>
-                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="top" secondItem="Rxm-VM-nGT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2ON-Zd-PrG"/>
+                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="baseline" secondItem="RSY-Xi-3QA" secondAttribute="baseline" type="default" id="33s-Sr-RUI"/>
                             <constraint firstItem="RSY-Xi-3QA" firstAttribute="top" secondItem="qm3-fI-zT8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4RR-Or-2lF"/>
                             <constraint firstItem="RSY-Xi-3QA" firstAttribute="leading" secondItem="qm3-fI-zT8" secondAttribute="leading" type="default" id="4cj-en-SVw"/>
                             <constraint firstItem="NIm-fj-9yM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="62N-Fr-d9G"/>
+                            <constraint firstItem="Rxm-VM-nGT" firstAttribute="bottom" secondItem="qm3-fI-zT8" secondAttribute="bottom" type="default" id="A4Z-26-xC7"/>
                             <constraint firstItem="qm3-fI-zT8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="UFe-WD-uhg"/>
-                            <constraint firstItem="RSY-Xi-3QA" firstAttribute="bottom" secondItem="Hbs-Dg-K2t" secondAttribute="bottom" type="default" id="Wa9-y2-3Hu"/>
                             <constraint firstItem="NIm-fj-9yM" firstAttribute="trailing" secondItem="Hbs-Dg-K2t" secondAttribute="trailing" type="default" id="Wla-k0-qws"/>
+                            <constraint firstItem="qm3-fI-zT8" firstAttribute="baseline" secondItem="Rxm-VM-nGT" secondAttribute="baseline" type="default" id="Y8m-7O-H3f"/>
                             <constraint firstItem="NIm-fj-9yM" firstAttribute="top" secondItem="Hbs-Dg-K2t" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Yru-KT-7J8"/>
                             <constraint firstItem="Rxm-VM-nGT" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ban-Iv-jUh"/>
                             <constraint firstItem="Rxm-VM-nGT" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="icK-sf-2z7"/>
                             <constraint firstItem="qm3-fI-zT8" firstAttribute="leading" secondItem="Rxm-VM-nGT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="owf-J2-bBo"/>
-                            <constraint firstItem="qm3-fI-zT8" firstAttribute="centerY" secondItem="Rxm-VM-nGT" secondAttribute="centerY" type="default" id="rqR-kf-ZSm"/>
                             <constraint firstItem="RSY-Xi-3QA" firstAttribute="trailing" secondItem="qm3-fI-zT8" secondAttribute="trailing" type="default" id="xls-Qz-P6l"/>
+                            <constraint firstItem="Hbs-Dg-K2t" firstAttribute="top" secondItem="3" secondAttribute="top" constant="133" id="yEJ-Ox-2gU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GjP-Eg-peS"/>
@@ -222,23 +226,56 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jg2-Bj-lFL">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="394" id="m3Y-Rm-L5C"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="Pby-47-M48" id="OVj-R3-cOC"/>
                                     <outlet property="delegate" destination="Pby-47-M48" id="NoE-HE-IN5"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YUL-5c-kMJ">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Pby-47-M48" id="TIW-2Q-Xm6"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jg2-Bj-lFL" firstAttribute="trailing" secondItem="8aT-wE-Cuc" secondAttribute="trailing" type="default" id="3B8-r5-lEj"/>
+                            <constraint firstItem="YUL-5c-kMJ" firstAttribute="top" secondItem="8aT-wE-Cuc" secondAttribute="top" constant="-1" id="45s-8Y-rhA"/>
+                            <constraint firstItem="YUL-5c-kMJ" firstAttribute="trailing" secondItem="8aT-wE-Cuc" secondAttribute="trailing" type="default" id="Bzh-Yc-P8B"/>
+                            <constraint firstItem="YUL-5c-kMJ" firstAttribute="leading" secondItem="8aT-wE-Cuc" secondAttribute="leading" type="default" id="GMI-Zl-ibM"/>
                             <constraint firstItem="Jg2-Bj-lFL" firstAttribute="bottom" secondItem="8aT-wE-Cuc" secondAttribute="bottom" type="default" id="GWK-bF-8vJ"/>
                             <constraint firstItem="Jg2-Bj-lFL" firstAttribute="leading" secondItem="8aT-wE-Cuc" secondAttribute="leading" type="default" id="edp-CT-6zq"/>
-                            <constraint firstItem="Jg2-Bj-lFL" firstAttribute="top" secondItem="8aT-wE-Cuc" secondAttribute="top" type="default" id="jUj-s6-aaw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eyc-zS-N0x"/>
+                    <connections>
+                        <outlet property="searchBar" destination="YUL-5c-kMJ" id="SML-iZ-R0x"/>
+                        <outlet property="searchDisplayController" destination="AaA-hH-rkd" id="RL9-Qg-zfa"/>
+                        <outlet property="tableView" destination="Jg2-Bj-lFL" id="c7o-bX-yyg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9T-d7-tVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="J3e-Yh-VLC">
+                    <connections>
+                        <outlet property="delegate" destination="Pby-47-M48" id="ohS-0u-Rdi"/>
+                        <outlet property="searchContentsController" destination="Pby-47-M48" id="hZB-0Z-q2x"/>
+                        <outlet property="searchResultsDataSource" destination="Pby-47-M48" id="bEx-d9-o42"/>
+                        <outlet property="searchResultsDelegate" destination="Pby-47-M48" id="sYg-xI-EcY"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="AaA-hH-rkd">
+                    <connections>
+                        <outlet property="delegate" destination="Pby-47-M48" id="blT-LJ-yn3"/>
+                        <outlet property="searchBar" destination="YUL-5c-kMJ" id="bTz-Np-BTX"/>
+                        <outlet property="searchContentsController" destination="Pby-47-M48" id="UtV-ql-TSZ"/>
+                        <outlet property="searchResultsDataSource" destination="Pby-47-M48" id="sc1-7c-pB6"/>
+                        <outlet property="searchResultsDelegate" destination="Pby-47-M48" id="tnL-Yh-BY2"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="775" y="-265"/>
         </scene>
@@ -259,6 +296,11 @@
         </class>
         <class className="PhoneViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToSearch:"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="SurvivalTableController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SurvivalTableController.h"/>

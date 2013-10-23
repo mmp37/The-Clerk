@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoritesManager.h"
 
 @interface SurvivalTableController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (retain, nonatomic) NSArray * conditionNames;
+@property (retain, nonatomic) FavoritesManager * localDB;
 
 @end

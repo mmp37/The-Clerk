@@ -30,11 +30,11 @@ static sqlite3_stmt *statement = nil;
     docsDir = dirPaths[0];
     // Build the path to the database file
     databasePath = [[NSString alloc] initWithString:
-                    [docsDir stringByAppendingPathComponent: @"Favorites.db"]];
+                    [docsDir stringByAppendingPathComponent: @"Favorites2.db"]];
     BOOL isSuccess = YES;
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    if ([filemgr fileExistsAtPath: databasePath ] == NO)
-    {
+  //  if ([filemgr fileExistsAtPath: databasePath ] == NO)
+  //  {
         const char *dbpath = [databasePath UTF8String];
         if (sqlite3_open(dbpath, &database) == SQLITE_OK)
         {
@@ -57,7 +57,7 @@ static sqlite3_stmt *statement = nil;
             isSuccess = NO;
             NSLog(@"Failed to open/create database");
         }
-    }
+  //  }
     return isSuccess;
 }
 
@@ -138,6 +138,7 @@ static sqlite3_stmt *statement = nil;
 }
 
 -(NSArray*) retrieveAll:(NSString*)tableName {
+    
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
@@ -154,6 +155,7 @@ static sqlite3_stmt *statement = nil;
                                   (const char *) sqlite3_column_text(statement, 0)];
                 NSString *data = [[NSString alloc] initWithUTF8String:
                                       (const char *) sqlite3_column_text(statement, 1)];
+                NSLog(@"%@\n%@", name, data);
                 PhoneNumber* phnum = [[PhoneNumber alloc] initWithName:name andNumber:data];
                 [resultArray addObject:phnum];
             }
