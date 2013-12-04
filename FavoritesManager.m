@@ -5,6 +5,7 @@
 //  Created by Matthew Parides on 9/28/13.
 //  Copyright (c) 2013 Duke. All rights reserved.
 //
+/* This class handles the interaction with the database that maintains favoriting information */
 
 #import "FavoritesManager.h"
 static FavoritesManager *sharedInstance = nil;
@@ -40,9 +41,9 @@ static sqlite3_stmt *statement = nil;
         {
             char *errMsg;
             const char *sql_stmt =
-            "create table if not exists favconds (name text, data text)";
+            "create table if not exists favconds (name text unique, data text, tags text, dept text)";
             const char *sql_stmt2 =
-            "create table if not exists favphnums (name text, num text)";
+            "create table if not exists favphnums (name text unique, num text)";
             if ((sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg)
                  != SQLITE_OK) || sqlite3_exec(database, sql_stmt2, NULL, NULL, &errMsg)
                 != SQLITE_OK)
@@ -62,12 +63,14 @@ static sqlite3_stmt *statement = nil;
 }
 
 -(BOOL) saveCondition:(NSString*)name
-                 data:(NSString*)data {
+                 data:(NSString*)data
+                 tags:(NSString*)tags
+                 dept:(NSString*)dept{
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into favconds (name, data) values (\"%@\", \"%@\")",
-                               name, data];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into favconds (name, data, tags, dept) values (\"%@\", \"%@\", \"%@\", \"%@\")",
+                               name, data, tags, dept];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)
@@ -137,13 +140,13 @@ static sqlite3_stmt *statement = nil;
     return nil;
 }
 
--(NSArray*) retrieveAll:(NSString*)tableName {
+-(NSArray*) retrieveAllPhNum{
     
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
         NSString *querySQL = [NSString stringWithFormat:
-                              @"select * from %@",tableName];
+                              @"select * from favphnums"];
         const char *query_stmt = [querySQL UTF8String];
         NSMutableArray *resultArray = [[NSMutableArray alloc]init];
         if (sqlite3_prepare_v2(database,
@@ -155,9 +158,41 @@ static sqlite3_stmt *statement = nil;
                                   (const char *) sqlite3_column_text(statement, 0)];
                 NSString *data = [[NSString alloc] initWithUTF8String:
                                       (const char *) sqlite3_column_text(statement, 1)];
-                NSLog(@"%@\n%@", name, data);
                 PhoneNumber* phnum = [[PhoneNumber alloc] initWithName:name andNumber:data];
                 [resultArray addObject:phnum];
+            }
+            sqlite3_reset(statement);
+            return resultArray;
+        }
+    }
+    return nil;
+}
+
+
+-(NSArray*) retrieveAllConds{
+    
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:
+                              @"select * from favconds"];
+        const char *query_stmt = [querySQL UTF8String];
+        NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while(sqlite3_step(statement) == SQLITE_ROW)
+            {
+                NSString *name = [[NSString alloc] initWithUTF8String:
+                                  (const char *) sqlite3_column_text(statement, 0)];
+                NSString *text = [[NSString alloc] initWithUTF8String:
+                                  (const char *) sqlite3_column_text(statement, 1)];
+                NSString *tags = [[NSString alloc] initWithUTF8String:
+                                  (const char *) sqlite3_column_text(statement, 2)];
+                NSString *dept = [[NSString alloc] initWithUTF8String:
+                                  (const char *) sqlite3_column_text(statement, 3)];
+                Condition* cond = [[Condition alloc] initWithName:name text:text tags:tags dept:dept];
+                [resultArray addObject:cond];
             }
             sqlite3_reset(statement);
             return resultArray;

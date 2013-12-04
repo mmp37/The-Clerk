@@ -1,0 +1,8 @@
+Backlog:
+
+- The survival guide portion of the app should be replaced by a database-backed wiki site using MediaWiki or another wiki api.
+    -Host a website using the Mediawiki api
+    -Back the website with a database on Duke servers
+    -Confirm the validity of all web pieces with Duke Hospital technical administration.
+- Self assessment: the addition of a self-assessment module for burnout testing.
+- add a settings menu for user-specific information required for self-assessment.

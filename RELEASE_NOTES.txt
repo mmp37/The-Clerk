@@ -1,0 +1,8 @@
+Current functionality:
+- Phone book: the app is able to display phone numbers held in the phonebook.sqlite3 database file and make phone calls. Phone number information can be added and edited within the app.
+- Survival Guide: the app doesn't fully support this functionality right now. This piece should be replaced with a MediaWiki website backed by a database on Duke servers, and a web view to the website within the app.
+- News: the app is able to display a view to the duke internal medicine bulletin website
+- Favorites: the app is able to track and display a user's favorite items
+
+Testing:
+- at the time of release to the client, this app was tested on both iOS and Android platforms

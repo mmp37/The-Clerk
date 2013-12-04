@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SVWebViewController.h"
 
 @interface ViewController : UIViewController
 @property (retain, nonatomic) IBOutlet UIButton *PhoneButton;

@@ -8,6 +8,7 @@
 
 #import <sqlite3.h>
 #import "PhoneNumber.h"
+#import "Condition.h"
 
 @interface FavoritesManager : NSObject
 {
@@ -17,10 +18,13 @@
 +(FavoritesManager*)getSharedInstance;
 -(BOOL)createDB;
 -(BOOL) saveCondition:(NSString*)name
-        data:(NSString*)data;
+        data:(NSString*)data
+        tags:(NSString*)tags
+        dept:(NSString*)dept;
 -(BOOL) savePhNum:(NSString*)name
                  num:(NSString*)num;
 -(NSArray*) findByUserName:(NSString*)name;
--(NSArray*) retrieveAll:(NSString*)tableName;
+-(NSArray*) retrieveAllPhNum;
+-(NSArray*) retrieveAllConds;
 
 @end

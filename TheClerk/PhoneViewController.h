@@ -8,20 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "FavoritesManager.h"
-#import "ClerkCell.h"
 #import <MessageUI/MessageUI.h> 
 #import "SWTableViewCell.h"
+#import "PhoneNumber.h"
+#import "PhoneBookManager.h"
 
 @interface PhoneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, SWTableViewCellDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
-@property (retain, nonatomic) NSArray* phoneNumbersArray;
-@property (retain, nonatomic) NSArray* phoneOwnerArray;
+@property (retain, nonatomic) NSMutableArray* phoneNumbersArray;
+//@property (retain, nonatomic) NSArray* phoneOwnerArray;
 @property (retain, nonatomic) FavoritesManager* localDB;
+@property (retain, nonatomic) PhoneBookManager* phoneDB;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) NSMutableArray* searchedNameArray;
 
 - (void) performFavorite:(id)sender;
 - (void)problemEmail:(id)sender;
-
+- (void)loadPhoneNumbers;
 @end

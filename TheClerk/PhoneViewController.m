@@ -5,8 +5,10 @@
 //  Created by Matthew Parides on 9/16/13.
 //  Copyright (c) 2013 Duke. All rights reserved.
 //
+/* This class displays the phone book view */
 
 #import "PhoneViewController.h"
+#import "PhNumAddViewController.h"
 
 @interface PhoneViewController ()
 
@@ -27,9 +29,14 @@
 {
     [super viewDidLoad];
     _localDB = [FavoritesManager getSharedInstance];
-    _phoneNumbersArray = [[NSArray alloc] initWithObjects:@"(123) 456-789", @"(408) 245-2414", @"(626) 678-7048",@"1111111111",@"1111111111",@"1111111111",@"1111111111",@"1111111111",@"1111111111",@"1111111111",@"1111111111", nil];
-    _phoneOwnerArray = [[NSArray alloc] initWithObjects:@"Bob", @"Phil", @"Kevin",@"Bill",@"Bill",@"Bill",@"Bill",@"Bill", @"Bill", @"Bill", @"Bill", nil];
-    _searchedNameArray = [[NSMutableArray alloc] initWithCapacity:[self.phoneOwnerArray count]];
+    _phoneDB = [PhoneBookManager getSharedInstance];
+    _phoneNumbersArray = [[NSMutableArray alloc] init];
+    //_phoneNumbersArray = (NSMutableArray*)[self.phoneDB retrieveAllPhNum];
+    [self loadPhoneNumbers];
+                          
+                          //@"(123) 456-789", @"(408) 245-2414", @"(626) 678-7048",@"5827492107",@"5209831792",@"10982378496",@"4982619386",@"2397496826",@"2001794827",@"1092748291",@"4928617384", nil];
+    //_phoneOwnerArray = [[NSArray alloc] initWithObjects:@"Bob", @"Phil", @"Kevin",@"Bill",@"Matt",@"Jon",@"Zack",@"Tom", @"Chris", @"Steven", @"Bill", nil];
+    _searchedNameArray = [[NSMutableArray alloc] initWithCapacity:[self.phoneNumbersArray count]];
 	// Do any additional setup after loading the view.
 }
 
@@ -38,6 +45,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//start Table View methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -75,19 +84,6 @@
         NSMutableArray *leftUtilityButtons = [NSMutableArray new];
         NSMutableArray *rightUtilityButtons = [NSMutableArray new];
         
-//        [leftUtilityButtons addUtilityButtonWithColor:
-//         [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1.0]
-//                                                 icon:[UIImage imageNamed:@"check.png"]];
-//        [leftUtilityButtons addUtilityButtonWithColor:
-//         [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:1.0]
-//                                                 icon:[UIImage imageNamed:@"clock.png"]];
-//        [leftUtilityButtons addUtilityButtonWithColor:
-//         [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1.0]
-//                                                 icon:[UIImage imageNamed:@"cross.png"]];
-//        [leftUtilityButtons addUtilityButtonWithColor:
-//         [UIColor colorWithRed:0.55f green:0.27f blue:0.07f alpha:1.0]
-//                                                 icon:[UIImage imageNamed:@"list.png"]];
-        
         [rightUtilityButtons addUtilityButtonWithColor:
          [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
                                                  title:@"Problem?"];
@@ -107,56 +103,12 @@
         cell.delegate = self;
     }
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        NSString *name = [self.searchedNameArray objectAtIndex:indexPath.row];
+        NSString *name = ((PhoneNumber*)[self.searchedNameArray objectAtIndex:indexPath.row]).name;
         cell.textLabel.text = name;
-        int index = [self.phoneOwnerArray indexOfObjectIdenticalTo:name];
-        cell.detailTextLabel.text = [self.phoneNumbersArray objectAtIndex:index];
     } else {
-        cell.textLabel.text = [self.phoneOwnerArray objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [self.phoneNumbersArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = ((PhoneNumber*)[self.phoneNumbersArray objectAtIndex:indexPath.row]).name;
+//cell.detailTextLabel.text = [self.phoneNumbersArray objectAtIndex:indexPath.row];
     }
-    
-  //  cell.detailTextLabel.text = [self.phoneNumbersArray objectAtIndex:indexPath.row];
-  //  cell.textLabel.text = [self.phoneOwnerArray objectAtIndex:indexPath.row];
-    //ClerkCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-//    SWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-//    
-//    if (cell == nil) {
-//        //cell = [[ClerkCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
-//        cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
-//    }
-//    
-//    
-//    
-//    cell.detailTextLabel.text = [self.phoneNumbersArray objectAtIndex:indexPath.row];
-//    cell.textLabel.text = [self.phoneOwnerArray objectAtIndex:indexPath.row];
-    
-//    UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    button.frame = CGRectMake(0.0f, 0.0f, 150.0f, 50.0f);
-//    
-//    [button setTitle:@"Favorite"
-//            forState:UIControlStateNormal];
-//    
-//    [button addTarget:self
-//               action:@selector(performFavorite:)
-//     forControlEvents:UIControlEventTouchUpInside];
-//    [button setTag:indexPath.row];
-//    UIButton *problemButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    problemButton.frame = CGRectMake(0.0f, 50.0f, 150.0f, 50.0f);
-//    
-//    [problemButton setTitle:@"Problem?"
-//            forState:UIControlStateNormal];
-//    
-//    [problemButton addTarget:self
-//               action:@selector(problemEmail:)
-//     forControlEvents:UIControlEventTouchUpInside];
-//    [problemButton setTag:indexPath.row];
-//    [buttonView addSubview:button];
-//    [buttonView addSubview:problemButton];
-//    cell.accessoryView = buttonView;
-
-    
     
     return cell;
 }
@@ -172,7 +124,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* phnum = [[NSString alloc] initWithString:[self.phoneNumbersArray objectAtIndex:indexPath.row]];
+    NSString* phnum = [NSString alloc];
+    NSLog(@"begin");
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        phnum = ((PhoneNumber*)[[NSString alloc] initWithString:[self.searchedNameArray objectAtIndex:indexPath.row]]).number;
+    }
+    else {
+        phnum = ((PhoneNumber*)[self.phoneNumbersArray objectAtIndex:indexPath.row]).number;
+    }
     phnum = [phnum stringByReplacingOccurrencesOfString:@"(" withString:@""];
     phnum = [phnum stringByReplacingOccurrencesOfString:@")" withString:@""];
     phnum = [phnum stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -186,11 +145,14 @@
     // Return YES if you want the specified item to be editable.
     return YES;
 }
+//end table view methods
+
+//start swipe-button methods
 
 -(void) performFavorite:(id) sender {
        // NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
         NSIndexPath *indexPath = [self.tableView indexPathForCell:(SWTableViewCell*)sender];
-        [self.localDB savePhNum:[self.phoneOwnerArray objectAtIndex:indexPath.row] num:[self.phoneNumbersArray objectAtIndex:indexPath.row]];
+        [self.localDB savePhNum:((PhoneNumber*)[self.phoneNumbersArray objectAtIndex:indexPath.row]).name num:((PhoneNumber*)[self.phoneNumbersArray objectAtIndex:indexPath.row]).number];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorited"
                                                         message:@"This item has been added to your favorites!"
                                                        delegate:nil
@@ -243,6 +205,10 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+//end swipe-button methods
+
+//start search methods
+
 
 #pragma mark Content Filtering
 
@@ -254,8 +220,8 @@
 	[self.searchedNameArray removeAllObjects];
     
 	// Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
-    NSArray *tempArray = [self.phoneOwnerArray filteredArrayUsingPredicate:predicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchText];
+    NSArray *tempArray = [self.phoneNumbersArray filteredArrayUsingPredicate:predicate];
     
    /* if(![scope isEqualToString:@"All"]) {
         // Further filter the array with the scope
@@ -300,8 +266,9 @@
 }
 
 
-/*
+
 #pragma mark - UISearchBarDelegate Methods
+/*
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     //move the search bar up to the correct location eg
     [UIView animateWithDuration:.4
@@ -339,6 +306,9 @@
     searchBar.frame = rect;
 }
 
+//end search methods
+
+
 //// Override to support editing the table view.
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 //    if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -361,5 +331,56 @@
     [_tableView release];
     [_searchBar release];
     [super dealloc];
+}
+
+
+- (void)loadPhoneNumbers {
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Duke Clinical Laboratories " andNumber:@"613-8400"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"ABG" andNumber:@"681-3223"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Autopsy Reports" andNumber:@"684-2457"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Blood Bank" andNumber:@"681-2644"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Central Collections" andNumber:@"681-2620"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Central Processing (Chemistry)" andNumber:@"681-1398"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Coagulation" andNumber:@"684-6366"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Cytology" andNumber:@"684-3587"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Cytogenetics" andNumber:@"684-6426"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Fine Needle Aspirat" andNumber:@"684-3587"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Flow Cytometry (CD4)" andNumber:@"684-2725"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Hematology" andNumber:@"684-6738"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Immunology" andNumber:@"684-2822"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Microbiology/Virology" andNumber:@"684-2089"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Molecular Micro/ HIV Viral Load" andNumber:@"684-3499"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Pathology Central Switchboard" andNumber:@"681-3133"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Phlebotomy" andNumber:@"681-6933"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Sleep Study Lab" andNumber:@"681-2803"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Surgical Pathology" andNumber:@"681-3909"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Bone Reading Room" andNumber:@"684-7247"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Emergency Department" andNumber:@"684-4462"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"Cardiology" andNumber:@"681-5816"]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    [self.phoneNumbersArray addObject:[[PhoneNumber alloc] initWithName:@"" andNumber:@""]];
+    
+
+    
+    
 }
 @end

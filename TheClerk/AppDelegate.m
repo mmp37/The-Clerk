@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FavoritesManager.h"
+#import "PhoneBookManager.h"
 
 @implementation AppDelegate
 
@@ -21,6 +22,7 @@
 {
     // Override point for customization after application launch.
     [FavoritesManager getSharedInstance];
+    [PhoneBookManager getSharedInstance];
     return YES;
 }
 							
